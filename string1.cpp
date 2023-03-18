@@ -1,7 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<string.h>
-// #include<bits/stdc++.h>
+ #include<bits/stdc++.h>
 using namespace std;
 
 
@@ -37,6 +37,7 @@ for(i=0; i<size;i++){
     if(arr[i]!=0){
         count++;
     }
+
 }
 
 return count;
@@ -62,14 +63,11 @@ bool check_pallindrome(char arr[],int size){
 if(lowercase(arr[start])!=lowercase(arr[end])){return 0;}
 else{start++;
 end--;}
-
-    }
-
-
-
-
-    return 1;
 }
+return 1;}
+ 
+    
+
  
 int main(){
 
@@ -86,17 +84,11 @@ int main(){
      
     cout << str << endl; 
  
-/*int count=0;
-for(int i=0;i<str.length();i++){
- if(str[i]==''){continue;}
- else{count++ ;}
- 
- }*/
-cout << "length of string is" <<endl<<count_chars(str)<<endl;
+cout << "length of string is" <<endl<<str.length()<<endl;
 
-/*char arr[5];
-//char ch;
-//char mh;
+char arr[5];
+char ch;
+char mh;
 cout<<"enter the element in array\n";
 for(int i=0;i<5;i++){
 cin>>arr[i];
@@ -115,7 +107,7 @@ cout<<"It is pallindrome or not\n"<<check_pallindrome(arr,5);
 cout<<"\n";
 cout<<"the lower case is\n"<<lowercase(ch);
 cout<<"\n";
-cout<<"the upper case is\n"<<uppercase(mh);*/
+cout<<"the upper case is\n"<<uppercase(mh);
 
 
 
