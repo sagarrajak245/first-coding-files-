@@ -44,7 +44,7 @@ void inserttail(node *&tail, int d)
     tail = temp;
 }
 
-void insertatmiddle(node *&tail, node *&head, int position, int d)
+void insertatmiddle(node *&tail, node *&head, int position, int data)
 {
     node *temp = head;
     int cnt = 1;
@@ -52,7 +52,7 @@ void insertatmiddle(node *&tail, node *&head, int position, int d)
     if (position == 1)
     {
 
-        insertathead(head, d);
+        insertathead(head, data);
         return;
     }
 
@@ -64,10 +64,10 @@ void insertatmiddle(node *&tail, node *&head, int position, int d)
 
     if (temp->next == NULL)
     {
-        inserttail(tail, d);
+        inserttail(tail, data);
         return;
     }
-    node *nodetoinsert = new node(d);
+    node *nodetoinsert = new node(data);
 
     nodetoinsert->next = temp->next;
     temp->next = nodetoinsert;
@@ -87,7 +87,7 @@ void deletetion(int position, node *&head)
     else
     {
         node *curr = head;
-        node *prev = NULL;
+        node *prev = NULL; // ye ek empty node hai jo sirf desire node tak pahuchne ke liye banya tha
         int cnt = 1;
         while (cnt < position)
         {

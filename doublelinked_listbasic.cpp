@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// double linked list basic....
 class node
 {
 
@@ -23,11 +24,11 @@ public:
     ~node()
     {
 
-        if (this->next != NULL)
+        if (next != NULL)
         {
 
             delete next;
-            this->next = NULL;
+            next = NULL;
         }
     }
 };
@@ -118,8 +119,9 @@ void deletenode(int position, node *head)
         node *temp = head;
 
         temp->next->prev = NULL;
-        temp->next = NULL;
         head = temp->next;
+        temp->next = NULL;
+
         delete temp;
     }
 
@@ -135,7 +137,7 @@ void deletenode(int position, node *head)
             curr = curr->next;
             cnt++;
         }
-        curr->next = NULL;
+
         prev->next = curr->next;
         curr->next = NULL;
 
@@ -168,10 +170,11 @@ int main()
 
     cout << endl;
     insertatmiddle(tail, head, 3, 56);
-    print(node1);
-    cout << endl;
-    deletenode(3, tail);
-    print(tail);
+    print(head);
+    cout << endl
+         << endl;
+    deletenode(3, head);
+    print(head);
 
     return 0;
 }
