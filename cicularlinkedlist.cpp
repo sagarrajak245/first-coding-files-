@@ -20,11 +20,11 @@ public:
     ~node()
     {
 
-        if (this->next != NULL)
+        if (next != NULL)
         {
 
             delete next;
-            this->next = NULL;
+            next = NULL;
         }
     }
 };
@@ -61,6 +61,36 @@ void insertatnode(node *&tail, int element, int data)
     }
 }
 
+void deletition(node *&tail, int element)
+{
+
+    // if list is empty
+    if (tail == NULL)
+    {
+        cout << "the list is empty";
+        return;
+    }
+
+    else
+    {
+
+        node *prev = tail;
+        node *curr = prev->next;
+        while (curr->data != element)
+        {
+            prev = curr;
+            curr = curr->next;
+        }
+        prev->next = curr->next;
+        if (tail == curr)
+        {
+            tail = prev;
+        }
+        curr->next = NULL;
+        delete curr;
+    }
+}
+
 void print(node *&tail)
 {
 
@@ -68,11 +98,11 @@ void print(node *&tail)
 
     do
     {
-        cout << tail->data << endl;
+        cout << tail->data << " ";
         tail = tail->next;
-        cout << "\t";
 
     } while (tail != temp);
+    cout << endl;
 }
 
 int main()
@@ -86,6 +116,10 @@ int main()
     insertatnode(tail, 7, 8);
     print(tail);
     insertatnode(tail, 8, 10);
+    print(tail);
+    cout << endl
+         << endl;
+    deletition(tail, 8);
     print(tail);
 
     return 0;
