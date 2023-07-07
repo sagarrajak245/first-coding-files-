@@ -196,6 +196,25 @@ node *getnode(node *&head)
 
     return NULL;
 }
+// remove loop in linked list
+
+void remove_loop(node *&head)
+{
+
+    if (head == NULL)
+    {
+        return;
+    }
+
+    node *startofloop = getnode(head);
+
+    node *temp = startofloop;
+    while (temp->next != startofloop)
+    {
+        temp = temp->next;
+    }
+    temp->next = NULL;
+}
 
 int main()
 {
@@ -236,7 +255,11 @@ int main()
     }
 
     node *ans = getnode(head);
-    cout << "the starting node of loop is  " << ans->data;
+    cout << "the starting node of loop is  " << ans->data << endl;
+
+    remove_loop(head);
+    cout << " the list after removal of loop is" << endl;
+    print(head);
 
     return 0;
 }
