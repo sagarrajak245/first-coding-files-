@@ -128,7 +128,7 @@ void deletenode(int position, node *head)
     else
     {
         node *curr = head;
-        node *prev = NULL; // ye ek empty node hai jo sirf desire node tak pahuchne ke liye banya tha
+        node *prev = NULL; // ye ek empty node pointer hai jo sirf desire node tak pahuchne ke liye banya tha
         int cnt = 1;
         while (cnt < position)
         {
