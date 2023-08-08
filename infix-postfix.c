@@ -74,19 +74,19 @@ int pre(char ch)
 {
     if (ch == '^')
     {
-        return 3;
+        return 4;
     }
     else if (ch == '*' || ch == '/' || ch == '%')
     {
-        return 2;
+        return 3;
     }
     else if (ch == '+' || ch == '-')
     {
-        return 1;
+        return 2;
     }
-    else
+    else if (ch == '=')
     {
-        return 0;
+        return 1;
     }
 }
 
@@ -143,7 +143,7 @@ char *inftopos(char *infix)
 int main()
 {
 
-    char *infix = "p*q+r-t";
+    char *infix = "p*t^d+q+r-t=y";
     puts(infix);
     printf("the ans is %s\n", inftopos(infix));
 
