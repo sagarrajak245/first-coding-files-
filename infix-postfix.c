@@ -84,15 +84,19 @@ int pre(char ch)
     {
         return 2;
     }
-    else if (ch == '=')
+    else if (ch == '=' || ch == '(' || ch == ')')
     {
         return 1;
+    }
+    else
+    {
+        return -1;
     }
 }
 
 int isoperator(char ch)
 {
-    if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^' || ch == '=')
+    if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^' || ch == '=' || ch == '(' || ch == ')')
     {
         return 1;
     }
@@ -143,9 +147,11 @@ char *inftopos(char *infix)
 int main()
 {
 
-    char *infix = "p*t^d+q+r-t=y";
+    char *infix;
+    printf("enter the infix expression\n");
+    gets(infix);
     puts(infix);
-    printf("the ans is %s\n", inftopos(infix));
+    printf("the ans is after postfix %s\n", inftopos(infix));
 
     return 0;
 }
