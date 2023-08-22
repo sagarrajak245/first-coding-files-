@@ -19,6 +19,7 @@ void main()
     printf("\nEnter 3 to display priority queue ");
     printf("\nEnter 4 to exit");
     create_queue();
+
     while (1)
     {
         printf("\nEnter your choice : ");
@@ -45,6 +46,7 @@ void main()
         }
     }
 }
+
 void create_queue()
 {
     front = rear = -1;
