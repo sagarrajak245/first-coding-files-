@@ -147,8 +147,10 @@ char *infixtopostfix(char *infix)
 
 int main()
 {
-    char *infix = "(a+b)*c/d";
+    char *infix = "A + B * C + D";
 
     printf("postfix is %s", infixtopostfix(infix));
     return 0;
 }
+
+//  "a+bc/d" in postfix notation is "abc+d/".
