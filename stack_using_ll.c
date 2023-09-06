@@ -5,6 +5,7 @@ struct node
     int data;
     struct node *next;
 };
+
 struct node *top = NULL;
 // this basically a head pointer but here we are calling it as top
 
@@ -31,6 +32,28 @@ void pop()
         free(temp);
     }
 }
+void display(struct node *top)
+{
+
+    struct node *ptr = top;
+    while (ptr != NULL)
+    {
+        printf("%d\n", ptr->data);
+        ptr = ptr->next;
+    }
+}
+
+int isempty(struct node *top)
+{
+    if (top == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 
 int main()
 {
@@ -38,13 +61,16 @@ int main()
     push(3);
     push(4);
     push(5);
+    push(6);
+    push(7);
+
+    printf("stack values are\n");
+    display(top);
+
+    pop();
     pop();
 
-    while (top != NULL)
-    {
-        printf("%d\n", top->data);
-        top = top->next;
-    }
-
+    printf("stack values after pop is\n");
+    display(top);
     return 0;
 }
