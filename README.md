@@ -1,5 +1,5 @@
 Hi there this sagar rajak..
-first coding repositry is all about different type of dsa question i solved on various platform such as 
+first coding repository is all about different type of dsa question i solved on various platform such as 
 leetcode and codechef..
 here i solved question on different datastrcture like array,stack, queue,linked list.
 also i solved question on 2d array ,string and bit manipulation,recursion and backtracking.
