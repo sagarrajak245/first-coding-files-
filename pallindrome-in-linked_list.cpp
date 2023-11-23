@@ -164,14 +164,11 @@ node *getmid(node *head)
 
     node *fast = head->next;
     node *slow = head;
-    while (fast != NULL && slow != NULL)
+    while (fast != NULL && fast->next != NULL && slow != NULL)
     {
 
         fast = fast->next;
-        if (fast != NULL)
-        {
-            fast = fast->next;
-        }
+
         slow = slow->next;
     }
     return slow;
@@ -198,7 +195,7 @@ node *rev(node *&head)
     return prev;
 }
 
-// 2method for pallindrome checking;
+// 2method for pallindrome checking; //code not working...
 bool lllpallindrome(node *&head)
 {
 
@@ -220,12 +217,13 @@ bool lllpallindrome(node *&head)
         {
             return false;
         }
+
         head1 = head1->next;
         head2 = head2->next;
     }
-    temp = middle->next;
-    middle->next = rev(temp);
-   
+    // temp = middle->next;
+    // middle->next = rev(temp); // backtracking;
+
     return true;
 }
 int main()
@@ -247,16 +245,16 @@ int main()
 
     cout << endl;
     cout << endl;
-    if (llpallindrome(node1))
-    {
+    /* if (llpallindrome(node1))
+     {
 
-        cout << "the given ll is pallindrome" << endl;
-    }
-    else
-    {
-        cout << "the given ll is not pallindrome" << endl;
-    }
-
+         cout << "the given ll is pallindrome" << endl;
+     }
+     else
+     {
+         cout << "the given ll is not pallindrome" << endl;
+     }
+ */
     if (lllpallindrome(node1))
     {
 
