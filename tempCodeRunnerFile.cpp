@@ -1,0 +1,2 @@
+
+    inserttail(tail, 5);
