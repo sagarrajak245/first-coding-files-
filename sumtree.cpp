@@ -1,7 +1,6 @@
 #include <iostream>
 
-
-// if root data is equal to sum of its child then 
+// if root data is equal to sum of its child then
 
 using namespace std;
 struct Node

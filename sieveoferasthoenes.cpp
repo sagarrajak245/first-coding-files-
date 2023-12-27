@@ -1,6 +1,6 @@
 // C++ program to print all primes smaller than or equal to
 // n using Sieve of Eratosthenes
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 void Sieve(int n)
