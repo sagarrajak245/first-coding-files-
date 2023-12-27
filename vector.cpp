@@ -1,20 +1,20 @@
 #include <iostream>
-#include<vector>
+#include <vector>
+
 using namespace std;
-int main (){
 
-vector<int> v;
-v.push_back(5);
-v.push_back(10);
-v.push_back(15);
-v.push_back(20);
+float avg(const vector<float> &v)
+{
+  float sum = 0;
+  for (const auto &n : v)
+    sum += n;            // sum all values.
+  return sum / v.size(); // divide by number of values.
+}
 
-cout<< v[0]<<endl;
-cout<< v[1]<<endl;
-cout<< v[2]<<endl;
-cout<< v[3]<<endl;
-cout<<v.capacity()<<endl;
-  cout<<v.size()<<endl;  
-
-    return 0; 
+int main()
+{
+  vector<float> v = {1, 2, 3, 4, 5};
+  float avg_value = avg(v);
+  cout << "The average value is: " << avg_value << endl;
+  return 0;
 }

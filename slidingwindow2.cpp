@@ -63,7 +63,7 @@ int main()
     int ans;
     int targetsum;
 
-    cout << "enter the target sum";
+    cout << "enter the target sum" << endl;
     cin >> targetsum;
 
     ans = slide(arr, 50, targetsum);

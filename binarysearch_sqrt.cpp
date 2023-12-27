@@ -1,38 +1,35 @@
 #include <iostream>
 using namespace std;
-
-long double sqrt(int num)
+int sqrt(int number)
 {
-
-    long double s = 0;
-    long double e = num;
-    long double mid = s + (e - s) / 2;
-    long double ans = -1;
-    while (s <= e)
+    int start = 0;
+    int end = number;
+    int ans = -1;
+    int mid = (start + end) / 2;
+    while (start <= end)
     {
 
-        long double sqr = mid * mid;
-
-        if (sqr == num)
-            return mid;
-        if (sqr < num)
+        if (mid * mid == number)
         {
-            s = mid + 1;
+            return mid;
+        }
+        else if (mid * mid < number)
+        {
+            start = mid + 1;
             ans = mid;
         }
         else
         {
-            e = mid - 1;
+            end = mid - 1;
         }
-
-        mid = s + (e - s) / 2;
+        mid = (start + end) / 2;
     }
     return ans;
 }
 
 int main()
 {
-   long double number;
+    long double number;
     cout << "enter the number ";
     cin >> number;
 

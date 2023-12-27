@@ -1,29 +1,30 @@
-#include<iostream>
-#include<math.h>
+#include <iostream>
+#include <math.h>
 using namespace std;
-int main(){
+int main()
+{
 
-int amount, rupee_notes;
-cout<<"enter the amount\n";
-cin>>amount;
-cout<<"enter the notes\n";
-cin>>rupee_notes;
-switch(rupee_notes){
-
-    case 100:{ cout<<"100 rupees notes will be\n"<<amount/100; }
-    cout<<"\n";
-
-    case 50:{ cout<<"50 rupees notes will be\n"<<amount/50; }
-     cout<<"\n";
-
-    case 20:{ cout<<"20 rupees notes will be\n"<<amount/20; }
-     cout<<"\n";
-
-    case 10:{ cout<<"10 rupees notes will be\n"<<amount/10; }
-    
-default:{cout<<"enter the valid notes";}
-     
-}
+    int amount;
+    cout << "enter the amount\n";
+    cin >> amount;
+    int notes[] = {2000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+    int noteCounter[10] = {0};
+    for (int i = 0; i < 10; i++)
+    {
+        if (amount >= notes[i])
+        {
+            noteCounter[i] = amount / notes[i];
+            amount = amount - noteCounter[i] * notes[i];
+        }
+    }
+    cout << "the notes are\n";
+    for (int i = 0; i < 10; i++)
+    {
+        if (noteCounter[i] != 0)
+        {
+            cout << notes[i] << " " << noteCounter[i] << endl;
+        }
+    }
 
     return 0;
 }
