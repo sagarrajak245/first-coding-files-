@@ -18,5 +18,5 @@ for(j=1;j<row-i+1;j++){
 cout<<"\n";
 }
 
-
+return 1;
 }

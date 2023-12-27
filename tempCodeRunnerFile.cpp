@@ -1,1 +1,2 @@
-ans
+#include<iostream>
+using namespace std;
