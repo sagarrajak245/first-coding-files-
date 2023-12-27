@@ -18,7 +18,7 @@ struct Node
 class Solution
 {
 public:
-        Node *lca(Node *root, int n1, int n2)
+    Node *lca(Node *root, int n1, int n2)
     {
         if (root == NULL)
         {
@@ -54,14 +54,8 @@ public:
     }
 };
 
-int main(){
-    
-
-
-
-
-
-
+int main()
+{
 
     return 0;
 }
