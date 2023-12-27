@@ -15,7 +15,7 @@ long int sqrt(long int num)
         return mid;
 
     if (sqr > num)
-        return
+        return;
 }
 
 int main()
