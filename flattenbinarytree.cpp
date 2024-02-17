@@ -106,5 +106,4 @@ public:
         root->left = nullptr;
         pre = root;
     }
-};
-flattenbinarytree
+}; 

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 using namespace std;
 
 struct TreeNode
@@ -49,3 +50,29 @@ public:
         return ans;
     }
 };
+
+int main()
+{
+    TreeNode *root = new TreeNode(3);
+    TreeNode *n1 = new TreeNode(9);
+    TreeNode *n2 = new TreeNode(20);
+    TreeNode *n3 = new TreeNode(15);
+    TreeNode *n4 = new TreeNode(7);
+
+    root->left = n1;
+    root->right = n2;
+    n2->left = n3;
+    n2->right = n4;
+
+    Solution s;
+    vector<vector<int>> ans = s.levelOrderBottom(root);
+
+    for (auto i : ans)
+    {
+        for (auto j : i)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+}
