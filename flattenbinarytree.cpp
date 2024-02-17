@@ -81,6 +81,10 @@ private:
 */
 
 // best solution
+// this code will make right skew tree
+// and will work like linked list
+// space is O(1)
+// time is O(n)
 struct TreeNode
 {
     TreeNode *left = NULL;
@@ -106,4 +110,4 @@ public:
         root->left = nullptr;
         pre = root;
     }
-}; 
+};
