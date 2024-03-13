@@ -38,37 +38,42 @@ public:
             cout << endl;
         }
     }
-    // useful when we want to traverse the graph
-    //    when we have equal weight of edges
-    //    when we want to find the shortest path
-    //    when we want to find the level of the graph
-    //    when we want to find the connected components of the graph
-    //    when we want to find the minimum spanning tree of the graph
-    //    when we want to find the shortest path from a single source to all other vertices
-    //    when we want to find the shortest path from all vertices to all other vertices
-    void bfs(int startnode)
+
+    // Depth-first search traversal
+    void dfs(int startnode)
     {
         vector<bool> visited(V, false);
-        queue<int> q;
+        dfsUtil(startnode, visited);
+    }
 
+    // Utility function for DFS traversal
+    void dfsUtil(int startnode, vector<bool> &visited)
+    {
         visited[startnode] = true;
-        q.push(startnode);
+        cout << startnode << " ";
 
-        while (!q.empty())
+        for (auto it = adjList[startnode].begin(); it != adjList[startnode].end(); ++it)
         {
-            int temp = q.front();
-            q.pop();
-
-            // Loop through all neighbors of the current node
-            for (auto neighbor : adjList[temp])
+            if (!visited[it->first])
             {
+                dfsUtil(it->first, visited);
+            }
+        }
+    }
 
-                if (!visited[neighbor.first])
-                {
-                    visited[neighbor.first] = true;
-                    q.push(neighbor.first);
-                    cout << "The visited node is " << neighbor.first << endl;
-                }
+    // Function to find connected components using DFS
+    void findConnectedComponents()
+    {
+        vector<bool> visited(V, false);
+
+        cout << "Connected Components:\n";
+        for (int i = 0; i < V; ++i)
+        {
+            if (!visited[i])
+            {
+                cout << "Component " << i << ": ";
+                dfsUtil(i, visited);
+                cout << endl;
             }
         }
     }
@@ -90,7 +95,14 @@ int main()
 
     // Print the graph
     g.printGraph();
-    g.bfs(0);
+
+    // Perform DFS traversal starting from vertex 0
+    cout << "\nDFS traversal starting from vertex 0: ";
+    g.dfs(0);
+    cout << endl;
+
+    // Find and print the connected components of the graph
+    g.findConnectedComponents();
 
     return 0;
 }
