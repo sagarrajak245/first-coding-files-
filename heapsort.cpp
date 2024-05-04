@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <queue>
 using namespace std;
 
 void heapify(vector<int> &arr, int n, int i)
@@ -46,6 +48,14 @@ int main()
     for (int i = 0; i < arr.size(); i++)
         cout << arr[i] << " ";
     cout << endl;
+    // priority queue is implemented using heap
+    cout << "Priority Queue" << endl;
+    priority_queue<int> pq;
+    pq.push(10);
+    pq.push(15);
+    pq.push(5);
+    pq.push(20);
+    cout << "top elelment " << pq.top() << endl;
 
     return 0;
 }
