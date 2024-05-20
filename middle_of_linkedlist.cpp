@@ -145,7 +145,7 @@ node *getmiddle(node *&head)
     return temp;
 }
 
-// SECOND METHOD==MOST OPTIMISE APPROACH use two pointer slow and fast mehod.....
+// SECOND METHOD==MOST OPTIMISE APPROACH use two pointer slow and fast method.....
 
 node *middle(node *&head)
 {
@@ -199,10 +199,10 @@ int main()
     cout << "the middle element of linked list is"
          << " " << node2->data << endl;
     cout << endl;
-    cout << endl;
 
     node *node3 = middle(node1);
     cout << "the middle element of linked list from second method is"
          << " " << node3->data << endl;
+
     return 0;
 }
