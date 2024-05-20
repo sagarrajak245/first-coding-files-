@@ -15,6 +15,10 @@ int main()
 {
   vector<float> v = {1, 2, 3, 4, 5};
   float avg_value = avg(v);
+
+  vector<int> v = {1, 2, 3, 4, 5};
+  v.push_back(6);
+
   cout << "The average value is: " << avg_value << endl;
   return 0;
 }

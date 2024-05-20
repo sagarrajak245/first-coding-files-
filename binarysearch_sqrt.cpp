@@ -5,10 +5,10 @@ int sqrt(int number)
     int start = 0;
     int end = number;
     int ans = -1;
-    int mid = (start + end) / 2;
+
     while (start <= end)
     {
-
+        int mid = (start + end) / 2;
         if (mid * mid == number)
         {
             return mid;
@@ -22,7 +22,6 @@ int sqrt(int number)
         {
             end = mid - 1;
         }
-        mid = (start + end) / 2;
     }
     return ans;
 }

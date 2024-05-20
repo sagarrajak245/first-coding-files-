@@ -27,16 +27,16 @@ int peak(int arr[], int size, int key)
 
 int main()
 {
-    int arr[4];
+    int arr[5];
     int key;
     cout << "enter the array\n";
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 5; i++)
     {
         cin >> arr[i];
     }
 
-    int search = peak(arr, 4, key);
-    cout << "the  peak  index of array is\n"
+    int search = peak(arr, 5, key);
+    cout << "the peak index of array is\n"
          << search;
 
     return 0;

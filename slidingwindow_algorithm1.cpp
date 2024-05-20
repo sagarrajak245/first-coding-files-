@@ -17,10 +17,11 @@ int main()
         2,
         3,
         5,
-        4,};
+        4,
+    };
     int targetsum;
 
-    cout << "enter the size of window";
+    cout << "enter the target sum: ";
     cin >> targetsum;
 
     int i = 0;
