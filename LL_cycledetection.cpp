@@ -153,14 +153,10 @@ node *floydscycle(node *&head)
 
     node *slow = head;
     node *fast = head;
-    while (slow != NULL && fast != NULL)
+    while (slow != NULL && fast != NULL && fast->next != NULL)
     {
 
         fast = fast->next;
-        if (fast != NULL)
-        {
-            fast = fast->next;
-        }
 
         slow = slow->next;
         if (slow == fast)

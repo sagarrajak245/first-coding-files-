@@ -1,5 +1,7 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <stack>
+#include <algorithm>
+
 // #include <stack>
 using namespace std;
 
@@ -10,14 +12,9 @@ bool ispallindrome(char arr[], int size)
     int end = size - 1;
     while (start <= end)
     {
-        if (arr[start] != arr[end])
+        if (arr[start++] != arr[end--])
         {
             return false;
-        }
-        else
-        {
-            start++;
-            end--;
         }
     }
 

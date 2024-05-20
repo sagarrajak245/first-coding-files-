@@ -10,6 +10,7 @@ int main()
     cout << "Enter a number: ";
     cin >> num;
     int count = 0;
+
     count = floor(log10(num) + 1);
 
     cout << "Number of digits: " << count << endl;
