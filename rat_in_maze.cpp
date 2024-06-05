@@ -21,39 +21,33 @@ void findPath(int row, int col, vector<vector<int>> &maze,
               int n, vector<string> &ans,
               string &currentPath)
 {
-    // If we reach the bottom right cell of the matrix, add
-    // the current path to ans and return
+    // If we reach the destination, we add the current path
+    // to the result vector
     if (row == n - 1 && col == n - 1)
     {
         ans.push_back(currentPath);
-        return;
     }
-    // Mark the current cell as blocked
-    maze[row][col] = 0;
-
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < n; i++)
     {
-        // Find the next row based on the current row (row)
-        // and the dr[] array
-        int nextrow = row + dr[i];
-        // Find the next column based on the current column
-        // (col) and the dc[] array
-        int nextcol = col + dc[i];
 
-        // Check if the next cell is valid or not
-        if (isValid(nextrow, nextcol, n, maze))
+        int newrow = row + dr[i];
+        int newcol = col + dc[i];
+        bool path = isValid(newrow, newcol, n, maze);
+
+        if (path)
         {
-            currentPath += direction[i];
-            // Recursively call the FindPath function for
-            // the next cell
-            findPath(nextrow, nextcol, maze, n, ans,
-                     currentPath);
-            // Remove the last direction when backtracking
+
+            maze[row][col] = 0; // mark visited
+
+            currentPath.push_back(direction[i]);
+            findPath(newrow, newcol, maze, n, ans, currentPath);
+
+            // backtrack
+            // mark unvisited
+            maze[row][col] = 1;
             currentPath.pop_back();
         }
     }
-    // Mark the current cell as unblocked
-    maze[row][col] = 1;
 }
 
 int main()
