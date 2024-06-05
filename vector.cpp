@@ -1,28 +1,23 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-// float avg(const vector<float> &v)
-// {
-//   float sum = 0;
-//   for (const auto &n : v)
-//     sum += n;            // sum all values.
-//   return sum / v.size(); // divide by number of values.
-// }
-
 int main()
 {
-  vector<int> v = {1, 2, 3, 4, 5};
+  // Initialize the vector of vectors
+  vector<vector<int>> v = {{1, 3}, {8, 4}, {2, 5}};
 
-  int n = v.size();
-  cout << "Size of vector is: " << n << endl;
-  int cnt = 0;
-  while (cnt < n)
+  // Sort the vector of vectors based on the first element of each inner vector
+  sort(v.begin(), v.end(), [](const vector<int> &a, const vector<int> &b)
+       { return a[0] < b[0]; });
+
+  // Print the sorted vector
+  for (const auto &vec : v)
   {
-    cnt++;
+    cout << "[" << vec[0] << ", " << vec[1] << "] ";
   }
-  cout << "cnt is: " << cnt << endl;
 
   return 0;
 }
