@@ -42,15 +42,18 @@ public:
         return ans;
     }
 };
-
+//{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
 int main()
 {
     Solution s;
-    vector<vector<int>> intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
-    vector<vector<int>> ans = s.merge(intervals);
+    vector<vector<int>> intervals = {{10, 16}, {2, 8}, {1, 6}, {7, 12}};
+    vector<vector<int>>
+        ans = s.merge(intervals);
     for (auto it : ans)
     {
         cout << "[" << it[0] << "," << it[1] << "]";
     }
+
+    cout << "\nthe size: " << ans.size() << endl;
     return 0;
 }

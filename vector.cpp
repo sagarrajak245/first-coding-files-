@@ -16,7 +16,7 @@ int main()
   // Print the sorted vector
   for (const auto &vec : v)
   {
-    cout << "[" << vec[0] << ", " << vec[1] << "] ";
+    cout << vec[1];
   }
 
   return 0;
