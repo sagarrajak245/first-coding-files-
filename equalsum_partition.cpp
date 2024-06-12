@@ -46,23 +46,39 @@ public:
 
         return t[n][sum]; // Return whether subset sum 'sum' is possible with 'n' elements of array 'v'
     }
+
+    bool canPartition(vector<int> &nums)
+    {
+
+        int sum = 0;
+        int n = nums.size();
+        bool ans = false;
+        for (int i = 0; i < n; i++)
+        {
+
+            sum += nums[i];
+        }
+
+        if (sum % 2 != 0)
+            return false;        // odd sum u cant make equal partition
+        int actualsum = sum / 2; // we nee dto search half of the sum half of the sum will be the sum of one partition
+
+        ans = solve(nums, n, actualsum);
+        return ans;
+    }
 };
 
 int main()
 {
-
     Solution s;
     vector<int> nums = {1, 5, 11, 5};
-    int sum = 6;
-
-    bool ans = s.solve(nums, nums.size(), sum);
-    if (ans)
+    if (s.canPartition(nums))
     {
-        cout << "subset is possible" << endl;
+        cout << "Equal sum partition is possible." << endl;
     }
     else
     {
-        cout << "subset is not possible" << endl;
+        cout << "Equal sum partition is not possible." << endl;
     }
 
     return 0;
