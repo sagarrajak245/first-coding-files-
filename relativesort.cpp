@@ -25,8 +25,8 @@ public:
         {
             while (mp[num] > 0)
             {
-                ans.push_back(num);
-                mp[num]--;
+                ans.push_back(num); // Add the element to the result
+                mp[num]--;          // Decrement the frequency
             }
         }
 

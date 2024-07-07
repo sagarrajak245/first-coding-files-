@@ -18,6 +18,8 @@ int main()
   {
     cout << vec[1];
   }
+  // reverese the vector
+  reverse(v.begin(), v.end());
 
   return 0;
 }
