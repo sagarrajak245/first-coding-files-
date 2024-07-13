@@ -4,7 +4,8 @@
 #include <algorithm>
 #include <queue>
 #include <bits/stdc++.h>
-using namespaceclass Solution{
+using namespace std;
+class Solution{
     public :
         int minIncrementForUnique(vector<int> & nums){
             priority_queue<int, vector<int>, greater<int>> minheap(nums.begin(), nums.end());
