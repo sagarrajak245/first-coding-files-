@@ -24,11 +24,11 @@ int maxSubarraySize(int arr[], int size, int targetSum)
         if (windowSum == targetSum)
         {
             maxSize = max(maxSize, right - left + 1);
-            found = true; // Set found flag to true
+            // found = true; // Set found flag to true
         }
     }
 
-    return found ? maxSize : 0; // Return maxSize if a valid subarray is found, otherwise return 0
+    return maxSize; // Return maxSize if a valid subarray is found, otherwise return 0
 }
 
 int main()
