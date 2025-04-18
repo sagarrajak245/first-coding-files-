@@ -51,51 +51,38 @@
 
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    int findMinArrowShots(vector<vector<int>> &points)
-    {
+    int findMinArrowShots(vector<vector<int>>& points) {
         int n = points.size();
-        if (n == 0)
-            return 0;
-        if (n == 1)
-            return 1;
+        if (n == 0) return 0;
+        if (n == 1) return 1;
 
-        // Sort intervals by their start points
-        sort(points.begin(), points.end());
+        // Sort intervals by their end points
+        sort(points.begin(), points.end(), [](const vector<int>& a, const vector<int>& b) {
+            return a[1] < b[1];
+        });
 
-        vector<vector<int>> ans;
-        vector<int> temp = points[0];
+        int arrows = 1;  // At least one arrow is needed
+        int end = points[0][1];  // First balloon burst position
 
-        for (const auto &it : points)
-        {
-            if (it[0] <= temp[1])
-            {
-                // Merge intervals by updating the end of temp
-                temp[1] = min(it[1], temp[1]);
-            }
-            else
-            {
-                // No overlap, push temp to ans and update temp to current interval
-                ans.push_back(temp);
-                temp = it;
+        for (const auto& balloon : points) {
+            if (balloon[0] > end) {
+                // A new arrow is needed
+                arrows++;
+                end = balloon[1];  // Update end to new balloon burst position
             }
         }
 
-        // Add the last interval
-        ans.push_back(temp);
-
-        // The number of merged intervals is the number of arrows needed
-        return ans.size();
+        return arrows;
     }
 };
 
-int main()
-{
+int main() {
     Solution sol;
     vector<vector<int>> points = {{10, 16}, {2, 8}, {1, 6}, {7, 12}};
     int result = sol.findMinArrowShots(points);
     cout << "Minimum number of arrows needed: " << result << endl;
     return 0;
 }
+

@@ -23,6 +23,7 @@ public:
     void addEdge(int firstnode, int secondnode, int weight)
     {
         // Undirected graph
+        // tc O(E)
         adjList[firstnode].push_back(make_pair(secondnode, weight));
         adjList[secondnode].push_back(make_pair(firstnode, weight));
     }

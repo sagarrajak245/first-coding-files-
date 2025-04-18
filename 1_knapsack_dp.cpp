@@ -38,7 +38,6 @@ int main()
     int weight[] = {10, 20, 30};
     int W = 50;
     int n = sizeof(profit) / sizeof(profit[0]);
-    memset(t, -1, sizeof(t));
 
     cout << "the maximum profit is: " << knapSack(W, weight, profit, n) << "\n";
     return 0;
