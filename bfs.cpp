@@ -51,27 +51,25 @@ public:
     {
         vector<bool> visited(V, false);
         queue<int> q;
-
-        visited[startnode] = true;
         q.push(startnode);
+        visited[startnode] = true;
 
         while (!q.empty())
         {
-            int temp = q.front();
+            int node = q.front();
+            cout << node << " ";
             q.pop();
 
-            // Loop through all neighbors of the current node
-            for (auto neighbor : adjList[temp])
+            for (auto it = adjList[node].begin(); it != adjList[node].end(); ++it)
             {
-
-                if (!visited[neighbor.first])
+                if (!visited[it->first])
                 {
-                    visited[neighbor.first] = true;
-                    q.push(neighbor.first);
-                    cout << "The visited node is " << neighbor.first << endl;
+                    q.push(it->first);
+                    visited[it->first] = true;
                 }
             }
         }
+        cout << endl;
     }
 };
 
